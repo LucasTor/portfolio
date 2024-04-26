@@ -23,7 +23,7 @@ function App() {
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <About title={data.about.title} description={data.about.description} />
         <Skills skills={data.skills} />
-        <Projects projects={data.projects} />
+        <Projects experience={data.experience} />
         <Footer github={data.social.github} />
       </div>
     </div>
