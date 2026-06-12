@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1e2026"/>
+  <path d="M5 17V5h12" fill="none" stroke="#7e9cf7" stroke-width="4"/>
+  <path d="M47 5h12v12" fill="none" stroke="#7e9cf7" stroke-width="4"/>
+  <path d="M59 47v12H47" fill="none" stroke="#7e9cf7" stroke-width="4"/>
+  <path d="M17 59H5V47" fill="none" stroke="#7e9cf7" stroke-width="4"/>
+  <text x="31" y="42" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="28" font-weight="500" fill="#eceef4">lt<tspan fill="#7e9cf7">_</tspan></text>
+</svg>
