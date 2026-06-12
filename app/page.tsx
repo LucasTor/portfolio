@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ContributionGraph from "@/components/ContributionGraph";
 import CursorGlow from "@/components/CursorGlow";
+import PingPong from "@/components/PingPong";
 import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -345,6 +346,7 @@ function Contact() {
       </Reveal>
       <footer className="mt-[130px] flex items-center justify-between border-t border-line pt-[26px] pb-10 text-[11px] text-faint">
         <span>© 2026 lucas torresan</span>
+        <span className="hidden sm:block">[ type &ldquo;pong&rdquo; for a surprise ]</span>
         <div className="flex gap-[26px]">
           <a
             href={githubUrl}
@@ -377,6 +379,7 @@ export default function Home() {
       <CursorGlow />
       <ScrollProgress />
       <ThemeToggle />
+      <PingPong />
       <div className="relative z-[1] mx-auto max-w-[1060px] px-6 sm:px-10">
         <Hero />
         <Experience />
