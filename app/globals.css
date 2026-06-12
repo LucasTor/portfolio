@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(0.16 0.006 262);
+  --bg2: oklch(0.2 0.008 262);
+  --text: oklch(0.94 0.005 262);
+  --muted: oklch(0.68 0.01 262);
+  --faint: oklch(0.51 0.012 262);
+  --line: oklch(0.92 0.01 262 / 0.14);
+  --accent: oklch(0.74 0.14 262);
+  --glow: oklch(0.74 0.14 262 / 0.09);
+  --cell: oklch(0.92 0.01 262 / 0.08);
+}
+
+:root[data-theme="light"] {
+  --bg: oklch(0.977 0.003 262);
+  --bg2: oklch(0.948 0.005 262);
+  --text: oklch(0.22 0.012 262);
+  --muted: oklch(0.47 0.012 262);
+  --faint: oklch(0.61 0.01 262);
+  --line: oklch(0.22 0.012 262 / 0.14);
+  --accent: oklch(0.5 0.17 262);
+  --glow: oklch(0.5 0.17 262 / 0.06);
+  --cell: oklch(0.22 0.012 262 / 0.07);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-cell: var(--cell);
+  --font-mono: var(--font-plex-mono), monospace;
+  --font-sans: var(--font-hanken), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono), monospace;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Keep every surface in step when the theme flips */
+section, div, h1, h2, h3, p, a, span, button, footer {
+  transition: background-color 0.5s ease, border-color 0.5s ease,
+    color 0.35s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: oklch(0.98 0 0);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.anim-fade-up {
+  animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.5s ease,
+    border-color 0.5s ease, color 0.35s ease;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .anim-fade-up {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
