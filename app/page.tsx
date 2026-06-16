@@ -11,7 +11,7 @@ const navItems = [
   { num: "01", label: "experience", href: "#experience", note: "6 roles" },
   { num: "02", label: "stack", href: "#stack", note: "17 tools" },
   { num: "03", label: "about", href: "#about", note: "1 human" },
-  { num: "04", label: "open source", href: "#oss", note: "3 repos" },
+  { num: "04", label: "open source", href: "#oss", note: "4 repos" },
   { num: "05", label: "contact", href: "#contact", note: "1 inbox" },
 ];
 
@@ -83,7 +83,7 @@ function Hero() {
             <span className="text-faint">status</span>
             <span className="flex items-center gap-[9px] text-accent">
               <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent animate-[blink_2.4s_ease_infinite]" />
-              [ e.g. open to senior roles ]
+              [ Observing 👀 ]
             </span>
           </div>
         </div>
