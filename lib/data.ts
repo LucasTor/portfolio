@@ -19,9 +19,9 @@ export const experience: Job[] = [
   {
     period: "sep 2020 — present",
     loc: "são marcos, brazil",
-    role: "Front-end Web Developer · freelance",
+    role: "Web Developer · freelance",
     company: "Concordia Labs",
-    points: ["Freelance ReactJS development."],
+    points: ["Freelance web development."],
   },
   {
     period: "aug 2024 — jun 2026",
@@ -29,7 +29,7 @@ export const experience: Job[] = [
     role: "Software Engineer",
     company: "TestBox",
     points: [
-      "[ What you built at TestBox — the product area you owned, stack, impact ]",
+      "Reverse-engineered third-party products and integrated them into our own products, in Python.",
     ],
   },
   {
