@@ -9,7 +9,7 @@ import { email, experience, githubUrl, linkedinUrl, repos, stacks } from "@/lib/
 
 const navItems = [
   { num: "01", label: "experience", href: "#experience", note: "6 roles" },
-  { num: "02", label: "stack", href: "#stack", note: "17 tools" },
+  { num: "02", label: "stack", href: "#stack", note: "44 tools" },
   { num: "03", label: "about", href: "#about", note: "1 human" },
   { num: "04", label: "open source", href: "#oss", note: "4 repos" },
   { num: "05", label: "contact", href: "#contact", note: "1 inbox" },

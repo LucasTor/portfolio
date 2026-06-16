@@ -58,18 +58,65 @@ export const experience: Job[] = [
 ];
 
 export const stacks = [
-  { label: "languages", items: ["Python", "TypeScript", "JavaScript", "SQL", 'C++'] },
+  {
+    label: "languages",
+    items: ["Python", "TypeScript", "JavaScript", "SQL", "Go", "C++"],
+  },
   {
     label: "frameworks",
-    items: ["React", "Next.js", "Django", "Express", "Flask", "Chalice"],
+    items: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Django",
+      "Django REST",
+      "Flask",
+      "FastAPI",
+      "Chalice",
+      "Celery",
+    ],
+  },
+  {
+    label: "data",
+    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "DuckDB", "Pandas"],
   },
   {
     label: "infrastructure",
-    items: ["AWS", "Terraform", "PostgreSQL", "GitHub Actions", "CircleCI", "GCP"],
+    items: [
+      "AWS",
+      "Terraform",
+      "Docker",
+      "AWS CDK",
+      "GitHub Actions",
+      "CircleCI",
+      "GCP",
+      "Datadog",
+      "Sentry",
+    ],
+  },
+  {
+    label: "integrations",
+    items: [
+      "Salesforce",
+      "HubSpot",
+      "Stripe",
+      "Twilio",
+      "Slack",
+      "Mailchimp",
+      "GraphQL",
+    ],
   },
   {
     label: "specialties",
-    items: ["Browser Automation", "Reverse Engineering"],
+    items: [
+      "Browser Automation",
+      "Reverse Engineering",
+      "Selenium",
+      "Playwright",
+      "Web Scraping",
+      "LLM Integration",
+    ],
   },
 ];
 
