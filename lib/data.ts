@@ -58,14 +58,14 @@ export const experience: Job[] = [
 ];
 
 export const stacks = [
-  { label: "languages", items: ["Python", "TypeScript", "JavaScript", "SQL"] },
+  { label: "languages", items: ["Python", "TypeScript", "JavaScript", "SQL", 'C++'] },
   {
     label: "frameworks",
     items: ["React", "Next.js", "Django", "Express", "Flask", "Chalice"],
   },
   {
     label: "infrastructure",
-    items: ["AWS", "Terraform", "PostgreSQL", "GitHub CI", "CircleCI"],
+    items: ["AWS", "Terraform", "PostgreSQL", "GitHub Actions", "CircleCI", "GCP"],
   },
   {
     label: "specialties",
