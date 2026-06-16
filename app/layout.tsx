@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const plexMono = IBM_Plex_Mono({
@@ -36,7 +37,14 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className="bg-bg font-mono text-fg antialiased">{children}</body>
+      <body className="bg-bg font-mono text-fg antialiased">
+        {children}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="50971573-d3c4-45bb-9eff-72b56c497786"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
