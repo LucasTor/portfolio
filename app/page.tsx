@@ -43,7 +43,7 @@ function SectionHeader({
   return (
     <Reveal className="flex gap-[14px] border-b border-line pb-[14px] text-xs tracking-[0.06em]">
       <span className="text-accent">{num}</span>
-      <span>{label}</span>
+      <h2 className="m-0 font-normal">{label}</h2>
       <span className="flex-1" />
       {right}
     </Reveal>
@@ -68,7 +68,7 @@ function Hero() {
             lucas
             <br />
             torresan
-            <span className="text-accent animate-[blink_1.2s_steps(1)_infinite]">_</span>
+            <span className="reduce-anim text-accent animate-[blink_1.2s_steps(1)_infinite]">_</span>
           </h1>
           <div
             className="anim-fade-up grid max-w-[640px] grid-cols-[110px_1fr] gap-x-7 gap-y-2.5 text-[13px] leading-[1.7]"
@@ -82,7 +82,7 @@ function Hero() {
             </span>
             <span className="text-faint">status</span>
             <span className="flex items-center gap-[9px] text-accent">
-              <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent animate-[blink_2.4s_ease_infinite]" />
+              <span className="reduce-anim h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent animate-[blink_2.4s_ease_infinite]" />
               [ Observing 👀 ]
             </span>
           </div>
@@ -123,7 +123,7 @@ function Hero() {
         ))}
       </nav>
       <div className="mt-16 flex items-center gap-2.5 text-[11px] text-faint">
-        <span className="animate-[drift_2.6s_ease-in-out_infinite]">↓</span> scroll
+        <span className="reduce-anim animate-[drift_2.6s_ease-in-out_infinite]">↓</span> scroll
       </div>
     </section>
   );
@@ -376,18 +376,24 @@ function Contact() {
 export default function Home() {
   return (
     <>
+      <a
+        href="#main"
+        className="sr-only z-[200] rounded-full border border-line bg-bg px-[15px] py-[9px] text-[13px] text-fg focus:not-sr-only focus:fixed focus:top-5 focus:left-5"
+      >
+        skip to content
+      </a>
       <CursorGlow />
       <ScrollProgress />
       <ThemeToggle />
       <PingPong />
-      <div className="relative z-[1] mx-auto max-w-[1060px] px-6 sm:px-10">
+      <main id="main" className="relative z-[1] mx-auto max-w-[1060px] px-6 sm:px-10">
         <Hero />
         <Experience />
         <Stack />
         <About />
         <OpenSource />
         <Contact />
-      </div>
+      </main>
     </>
   );
 }

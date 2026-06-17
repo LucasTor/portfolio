@@ -20,6 +20,7 @@ export default function ScrollProgress() {
   return (
     <div
       ref={ref}
+      aria-hidden="true"
       className="fixed top-0 left-0 z-[110] h-0.5 w-0 bg-accent"
     />
   );

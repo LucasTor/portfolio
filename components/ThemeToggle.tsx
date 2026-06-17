@@ -37,9 +37,10 @@ export default function ThemeToggle() {
       <button
         onClick={toggle}
         title="Toggle theme — press T"
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme (shortcut: t)`}
         className="flex cursor-pointer items-center gap-[9px] rounded-full border border-line bg-[color-mix(in_oklab,var(--bg)_78%,transparent)] px-[15px] py-[9px] font-mono text-[11px] tracking-[0.08em] text-muted backdrop-blur-[16px] hover:border-accent hover:text-fg"
       >
-        <span className="text-sm leading-none">◐</span>
+        <span className="text-sm leading-none" aria-hidden="true">◐</span>
         <span suppressHydrationWarning>{theme} · t</span>
       </button>
     </div>

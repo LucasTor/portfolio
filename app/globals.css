@@ -5,7 +5,7 @@
   --bg2: oklch(0.2 0.008 262);
   --text: oklch(0.94 0.005 262);
   --muted: oklch(0.68 0.01 262);
-  --faint: oklch(0.51 0.012 262);
+  --faint: oklch(0.62 0.012 262);
   --line: oklch(0.92 0.01 262 / 0.14);
   --accent: oklch(0.74 0.14 262);
   --glow: oklch(0.74 0.14 262 / 0.09);
@@ -17,7 +17,7 @@
   --bg2: oklch(0.948 0.005 262);
   --text: oklch(0.22 0.012 262);
   --muted: oklch(0.47 0.012 262);
-  --faint: oklch(0.61 0.01 262);
+  --faint: oklch(0.5 0.012 262);
   --line: oklch(0.22 0.012 262 / 0.14);
   --accent: oklch(0.5 0.17 262);
   --glow: oklch(0.5 0.17 262 / 0.06);
@@ -105,10 +105,20 @@ section, div, h1, h2, h3, p, a, span, button, footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal,
   .anim-fade-up {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  /* Hook applied to the blinking cursor/status dot and the drifting
+     scroll arrow so they hold still for motion-sensitive users. */
+  .reduce-anim {
+    animation: none !important;
   }
 }

@@ -20,6 +20,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Accessibility
+
+This project targets **WCAG 2.2 AA**. `npm run lint` (and therefore `next build`)
+enforces the full [`eslint-plugin-jsx-a11y`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+recommended rule set, so common accessibility regressions fail the build. When
+adding UI, keep semantic landmarks/headings, label interactive controls, maintain
+≥4.5:1 text contrast, and gate animation behind `prefers-reduced-motion`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

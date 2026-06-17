@@ -85,9 +85,13 @@ export default async function ContributionGraph() {
   const weeks = toWeeks(days);
   const labels = monthLabels(weeks);
 
+  const summary = data
+    ? `GitHub contribution graph — ${data.total ?? "—"} contributions in the last year`
+    : "GitHub contribution graph — placeholder data, GitHub API unreachable";
+
   return (
-    <div className="w-max">
-      <div className="mb-1.5 flex gap-[3px]">
+    <div className="w-max" role="img" aria-label={summary}>
+      <div className="mb-1.5 flex gap-[3px]" aria-hidden="true">
         {labels.map((m, i) => (
           <div
             key={i}
@@ -97,7 +101,7 @@ export default async function ContributionGraph() {
           </div>
         ))}
       </div>
-      <div className="flex gap-[3px]">
+      <div className="flex gap-[3px]" aria-hidden="true">
         {weeks.map((week, i) => (
           <div key={i} className="flex flex-col gap-[3px]">
             {week.map((d, j) =>

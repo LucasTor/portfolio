@@ -173,6 +173,8 @@ function PongGame() {
       ref={canvasRef}
       width={W}
       height={H}
+      role="img"
+      aria-label={`Pong game. Move the left paddle with the mouse or the arrow / W and S keys; first to ${WIN_SCORE} wins; press R to restart.`}
       className="block h-auto w-[560px] max-w-[calc(90vw-70px)] cursor-none border border-line"
     />
   );
@@ -180,6 +182,8 @@ function PongGame() {
 
 export default function PingPong() {
   const [open, setOpen] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const lastFocused = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     let buffer = "";
@@ -200,14 +204,44 @@ export default function PingPong() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Move focus into the dialog on open, trap Tab on the only control (the close
+  // button), and restore focus to the trigger on close.
+  useEffect(() => {
+    if (!open) return;
+    lastFocused.current = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Tab") {
+        e.preventDefault();
+        closeRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      lastFocused.current?.focus();
+    };
+  }, [open]);
+
   if (!open) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-[120] flex items-center justify-center bg-[oklch(0.1_0_0/0.6)] backdrop-blur-[6px]"
-      onClick={() => setOpen(false)}
-    >
-      <div className="relative p-[14px]" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-[oklch(0.1_0_0/0.6)] backdrop-blur-[6px]">
+      {/* Click-outside backdrop — a real button so it's keyboard-operable; Escape
+          and the [esc] button close too. Kept out of the tab order by the trap. */}
+      <button
+        type="button"
+        aria-label="Close pong game"
+        tabIndex={-1}
+        onClick={() => setOpen(false)}
+        className="absolute inset-0 cursor-default bg-transparent"
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Pong game"
+        className="relative p-[14px]"
+      >
         <span className="absolute top-0 left-0 h-[22px] w-[22px] border-t-2 border-l-2 border-accent" />
         <span className="absolute top-0 right-0 h-[22px] w-[22px] border-t-2 border-r-2 border-accent" />
         <span className="absolute bottom-0 left-0 h-[22px] w-[22px] border-b-2 border-l-2 border-accent" />
@@ -218,7 +252,9 @@ export default function PingPong() {
             <span className="text-faint">first to {WIN_SCORE} — mouse or ↑/↓</span>
             <span className="flex-1" />
             <button
+              ref={closeRef}
               onClick={() => setOpen(false)}
+              aria-label="Close pong game"
               className="cursor-pointer border-0 bg-transparent p-0 font-mono text-xs text-faint hover:text-accent"
             >
               [ esc ]
