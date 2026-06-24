@@ -122,11 +122,11 @@ export const stacks = [
 
 export const repos = [
   {
-    name: "can-cluster",
+    name: "ftcan-cluster",
     desc: "A from-scratch digital gauge cluster for my 1992 VW Gol G1 turbo. A Raspberry Pi 5 drives a 1920×720 dash display, reading live engine data straight off a FuelTech ECU over CAN (FTCAN 2.0) and switch inputs over GPIO, then rendering it through a minimal dark Kivy UI with custom widgets — gauges, readouts, alarm bars, turn indicators and a night-dim mode. The whole thing runs headless via systemd off a read-only SD card (overlayroot in RAM), because the car cuts power to the Pi the instant the ignition goes off and an unclean shutdown can never be allowed to corrupt it. Deploys are scripted to flip the filesystem writable, rsync, and lock it back down, verifying every reboot actually happened.",
     lang: "python",
     stars: "★ 0",
-    url: "https://github.com/LucasTor/can-cluster",
+    url: "https://github.com/LucasTor/ftcan-cluster",
   },
   {
     name: "FoxESS-T-series",
